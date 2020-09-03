@@ -52,7 +52,7 @@ def main():
     result=""
     if st.button("Predict"):
         result=predict_score(study_hours)
-    st.success('The score is {}'.format(result))
+        st.success('The score is {}'.format(result))
     if st.button("About"):
         st.text("Lets LEarn")
         st.text("Built with Streamlit")
