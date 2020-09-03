@@ -34,10 +34,13 @@ def predict_score(study_hours):
             description: The output value
         
     """
-   
-    prediction=regressor.predict(np.array([[study_hours]]).astype(np.float64))
-    print(prediction)
-    return prediction
+    input=np.array([[study_hours]]).astype(np.float64)
+    prediction=lr_model.predict(input)
+    pred='{0:.{1}f}'.format(prediction[0][0], 2)
+    return float(pred)
+    #prediction=regressor.predict(np.array([[study_hours]]).astype(np.float64))
+    #print(prediction)
+    #return prediction
 
 def main():
     st.title("Score Predictor")
@@ -49,7 +52,7 @@ def main():
     st.markdown(html_temp,unsafe_allow_html=True)
     study_hours = st.text_input("Study_hours","Type Here")
 
-    result=""
+    #result=""
     if st.button("Predict"):
         result=predict_score(study_hours)
         st.success('The score is {}'.format(result))
