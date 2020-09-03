@@ -35,7 +35,7 @@ def predict_score(study_hours):
         
     """
    
-    prediction=regressor.predict([[study_hours]])
+    prediction=regressor.predict([study_hours])
     print(prediction)
     return prediction
 
