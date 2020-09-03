@@ -35,7 +35,7 @@ def predict_score(study_hours):
         
     """
     input=np.array([[study_hours]]).astype(np.float64)
-    prediction=lr_model.predict(input)
+    prediction=regressor.predict(input)
     pred='{0:.{1}f}'.format(prediction[0][0], 2)
     return float(pred)
     #prediction=regressor.predict(np.array([[study_hours]]).astype(np.float64))
@@ -57,7 +57,7 @@ def main():
         result=predict_score(study_hours)
         st.success('The score is {}'.format(result))
     if st.button("About"):
-        st.text("Lets LEarn")
+        st.text("Lets Learn")
         st.text("Built with Streamlit")
 
 if __name__=='__main__':
