@@ -36,7 +36,7 @@ def predict_score(study_hours):
     #"""
     input=np.array([[study_hours]]).astype(np.float64)
     prediction=regressor.predict(input)
-    pred='{0:.{1}f}'.format(prediction[0][0], 2)
+    pred='{0:.{1}f}'.format(prediction[0], 2)
     return float(pred)
     #prediction=regressor.predict(np.array([[study_hours]]).astype(np.float64))
     #print(prediction)
