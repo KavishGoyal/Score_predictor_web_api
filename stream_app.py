@@ -8,7 +8,7 @@ Created on Thu Sep  3 14:20:49 2020
 
 import numpy as np
 import pickle
-import pandas as pd
+#import pandas as pd
 #from flasgger import Swagger
 import streamlit as st 
 
@@ -50,7 +50,7 @@ def main():
     </div>
     """
     st.markdown(html_temp,unsafe_allow_html=True)
-    study_hours = st.text_input("Study_hours","Type Here" )
+    study_hours = float(st.number_input("Study_hours"))
 
     #result=""
     if st.button("Predict"):
