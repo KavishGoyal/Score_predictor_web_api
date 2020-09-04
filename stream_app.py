@@ -20,20 +20,20 @@ def welcome():
 
 def predict_score(study_hours):
     
-    """Let's predict the score. 
-    This is using docstrings for specifications.
-    ---
-    parameters:  
-      - name: study_hours
-        in: query
-        type: number
-        required: true
+  #  """Let's predict the score. 
+  #  This is using docstrings for specifications.
+   # ---
+    #parameters:  
+     # - name: study_hours
+      #  in: query
+       ## type: number
+        #required: true
 
-    responses:
-        200:
-            description: The output value
+   # responses:
+    #    200:
+     #       description: The output value
         
-    """
+    #"""
     input=np.array([[study_hours]]).astype(np.float64)
     prediction=regressor.predict(input)
     pred='{0:.{1}f}'.format(prediction[0][0], 2)
@@ -50,7 +50,7 @@ def main():
     </div>
     """
     st.markdown(html_temp,unsafe_allow_html=True)
-    study_hours = st.text_input("Study_hours","Type Here")
+    study_hours = st.text_input("Study_hours","Type Here" )
 
     #result=""
     if st.button("Predict"):
